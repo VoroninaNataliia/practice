@@ -1,26 +1,176 @@
-.container {
-   
+/*  !!!Тема. Модуль 3. Блокавая модель. Flexbox!!!*/
+.flex-container {
+width: 1000px;
+height: 500px;
+background-color: black;
+
+
+display: flex; /*задает свойства флекс*/
+flex-direction: row; /*положение боксов внутри - ряд (это всойство по умолчанию)*/
+justify-content: space-between; /*положение боксов внутри - распределяется по боксу*/
+align-items: center; /*положение боксов по оси У - центрируется*/
 }
 
+.flex-box{
+width: 200px;
+height: 400px;
+background-color: blueviolet;
+margin: 15px;
+
+display: flex;
+flex-direction: column; /*положение боксов внутри - колонка
+(блоки перестают распологаться по оси Х и переходят на У,
+свойства  "justify-content" и "align-items" как бы меняются местами */
+align-items: center;
+justify-content: space-between;
+}
+
+.flex-item {
+width: 70px;
+height: 50px;
+background-color: aqua;
+
+padding-top: 10px;
+padding-right: 15;
+padding-bottom: 10px;
+padding-left: 15px;
+}
+
+.block {
+    display: block; /*задает строчным элемнтам функции блочных*/
+}
+
+
+
+
+/*  !!!Тема. Модуль 4. Декоративные эффекты и элементы!!!*/
+.container {
+   display: flex;
+   flex-wrap: wrap;
+   width: 940px;
+}
+
+/*задает свойства для всех элементов  с классом box */
 .box {
-    width: calc(50% -20px);
+    display: flex; /*задает флекс свойсва*/
+    flex-direction: column; /*содержимые боксы распологаются вертикально*/
+    width: 400px;
     height: 200px;
     margin: 10px;
     border-radius: 4px;
 }
 
+/*задает отличительные свойства (цвет)
+для каждого эл-та с классом box по его номеру (1,2,3,4)*/
 .box:nth-child(1) {
 background-color: aqua;
+background-image: url(../images/chupa_chups_PNG41.png);
+background-size: 30px;
+background-repeat: repeat-y;
 }
 
 .box:nth-child(2) {
-background-color: teal;    
+background-color: teal;  
+background-image: url(../images/Char\ 12.png);
+background-size: 50%;
+background-repeat: repeat-x;
+background-position: center;
+
 }
 
 .box:nth-child(3) {
- background-color: pink;   
+ background-color: pink; 
+ background-image: url(../images/Group.png);  
 }
 
 .box:nth-child(4) {
+    background-image: url(../images/chupa_chups_PNG41.png);
+    background-size: 30px;
   background-color: greenyellow;  
+}
+
+.item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100px;
+    height: 100px;
+}
+
+.item:nth-child(1){
+background-color: crimson;
+background-image: url(../images/Group.png);
+background-size: 50%;
+background-position: 50%;
+}
+
+.item:nth-child(2){
+background-image: url(../images/Group.png);
+background-color: blue;
+background-repeat: no-repeat;
+background-position: bottom 20px right 2px;  
+}
+
+
+
+/*многослойный фон*/
+.gradient-box {
+min-width: 1000px;
+height: 500px;
+
+/*Линейнный градиент*/
+/*на радужном фоне чупик - элементы перечислины через запятую*/
+background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 50%), /*rgba задает прозрачность 50% или другую*/
+    rgba(0, 0 , 255, 50%)), /*запятая после линейного градиента*/
+ url(../images/chupa_chups_PNG41.png); /*изображнние чупика*/
+
+background-repeat: no-repeat;
+background-position: center;
+background-size: contain;
+}
+
+/*Кнопка с иконкой*/
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    width: 200px;
+    height: 70px;
+    padding: 10px, 20px;
+    background-color: teal;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.button:hover,
+.button:focus {
+    background-color: red;
+}
+
+/*псевдоэлемент*/
+
+.button::before {
+    content: ""; /*обязательное свойство, иначе псевдоэлемент не создастся*/
+    width: 30px;
+    height: 30px;
+    background-color: violet; /*фон задать временно, чтоб видеть кук позиционировать "иконку"*/
+    background-image: url(../images/chupa_chups_PNG41.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top 2px left 5px;
+    
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 5px;
+}
+
+/*SVG-спрайт*/
+.actions {
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    outline: 1px solid black;
+    list-style: none;
 }
