@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
@@ -47,15 +48,129 @@
 
 Кнопка с иконкой /*псевдоэлемент*/ <br>
 
-<a class="button">Быстрый старт</a>
+<a class="button">Быстрый старт</a> <br>
 
-SVG-спрайт
+Векторная графика <br>
 
-<ul class="actions">
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
+SVG-спрайт. !Через внешний файл sprite - не работает!<br>
+
+<svg display="none">
+
+    <symbol id="youtube-black" viewBox="0 0 50 50">
+        <path d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z"/>
+    </symbol>
+
+    <symbol id="youtube-color" viewBox="0 0 48 48">
+        <path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"/><path fill="#FFF" d="M20 31L20 17 32 24z"/>
+    </symbol>
+</svg>
+
+<svg class="icon-youtube-black">
+    <use xlink href="#youtube-black"></use>
+</svg>
+
+<svg class="icon-youtube-color">
+    <use xlink href="#youtube-color"></use>
+</svg>
+
+Тема 5. Позиционированные элементы. <br>
+
+
+<svg display="none">
+
+    <symbol id="youtube-black" viewBox="0 0 50 50">
+        <path d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z"/>
+    </symbol>
+
+    <symbol id="youtube-color" viewBox="0 0 48 48">
+        <path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"/><path fill="#FFF" d="M20 31L20 17 32 24z"/>
+    </symbol>
+</svg>
+ 
+Абсолютное позиционирование СВЕРХУ картинки + ховер <br>
+<article class="employees-card-absolute">
+    <img src="./images/2_muhailo_yermakov.jpg" alt="Yermakov"/>
+    
+<div class="button-youtube-absolute">
+<button><svg class="icon-youtube" width="30" height="20">
+    <use xlink href="#youtube-black"></use>
+</svg></button>
+
+<button><svg class="icon-youtube" width="30" height="20">
+    <use xlink href="#youtube-color"></use>
+</svg></button>
+</div>
+    <h1>Ермаков</h1>
+    <p>Так работает лучший работник</p>
+</article>
    
+<br>Абсолютное позиционирование СНИЗУ картинки
+<article>
+    <div class="image-employees"><img src="./images/2_muhailo_yermakov.jpg" alt="Yermakov"/>
+    
+<div class="button-youtube-absol-down">
+<button><svg class="icon-youtube" width="30" height="20">
+    <use xlink href="#youtube-black"></use>
+</svg></button>
+
+<button><svg class="icon-youtube" width="30" height="20">
+    <use xlink href="#youtube-color"></use>
+</svg></button>
+</div></div>
+    <h1>Ермаков</h1>
+    <p>Так работает лучший работник</p>
+</article>
+
+<br> Модальное окно (в div "backdrop" надо отредактировать, тогда будет работать <br>
+
+<p>здесь написано много текста</p>
+
+<button>открыть модалку</button>
+
+<p>здесь написано много текста</p>
+
+<div class="это удалить, иначе закрывает все окно экрана, оставить - "backdrop is-hidden">
+    <div class="modal">
+        <p>можно написать любой контент</p>
+        <button>закрыть</button>
+    </div>
+</div>
+
+<br>всплывающее меню<br>
+
+ <ul class="menu-window">
+    <li class="menu-item-window">
+        <a href="" class="menu-link-window">комплектующие</a>
+            <ul class="submenu-window">
+                <li><a href="">фильтры</a></li>
+                <li><a href="">решетки</a></li>
+                <li><a href="">крышки</a></li>
+            </ul>
+    </li>
+    <li class="menu-item-window">
+        <a href="" class="menu-link-window">товары для дома</a>
+        <ul class="submenu-window">
+            <li><a href="">ковры</a></li>
+            <li><a href="">постельное белье</a></li>
+            <li><a href="">посуда</a></li>
+        </ul>
+    </li>
+    <li class="menu-item-window">
+        <a href="" class="menu-link-window">техника</a>
+        <ul class="submenu-window">
+            <li><a href="">хололильники</a></li>
+            <li><a href="">варочные панели</a></li>
+            <li><a href="">вытяжки</a></li>
+        </ul>
+    </li>
+ </ul>
+ <p>опять много текста, опять много текста,опять много текста,опять много текста</p>
+
+ АНИМАЦИИ (анимируются только !!!transform и opacity!!! )
+ <a href="./index.html">назад на главную</a><br>
+ <button class="btn-animation">подписаться</button>
+
+
+
 </body>
 </html>
